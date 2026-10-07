@@ -174,6 +174,9 @@ table.sample tr.own td{background:#fff1e8}
 }
 @media (max-width:520px){ .fgrid{grid-template-columns:1fr} .boxes{grid-template-columns:repeat(4,1fr)} }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+[id]{scroll-margin-top:84px}
+.card:target,.oos:target{outline:2px solid #c2410c;outline-offset:3px}
 </style>
 </head>
 <body>
@@ -246,22 +249,22 @@ table.sample tr.own td{background:#fff1e8}
       <p>Public bids are won or lost on the paperwork. We handle it so you can stay on the job site.</p>
     </div>
     <div class="cards">
-      <article class="card">
+      <article class="card" id="svc-search">
         <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#c2410c" stroke-width="2"/><path d="M15.5 15.5L21 21" stroke="#c2410c" stroke-width="2"/></svg></div>
         <h3>Find the right bids</h3>
         <p>We watch state, county and agency portals and send you only the solicitations that fit your trade, location and size.</p>
       </article>
-      <article class="card">
+      <article class="card" id="svc-review">
         <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 3h9l4 4v14H6z M15 3v4h4 M9 12h7 M9 16h7" fill="none" stroke="#c2410c" stroke-width="2"/></svg></div>
         <h3>Read the whole package</h3>
         <p>Every appendix and addendum. We flag mandatory pre-bids, years-in-business rules, license classes, insurance limits and set-aside conditions early.</p>
       </article>
-      <article class="card">
+      <article class="card" id="svc-package">
         <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#c2410c" stroke-width="2"/><path d="M8 8l2 2 4-4 M8 15h8" fill="none" stroke="#c2410c" stroke-width="2"/></svg></div>
         <h3>Build the bid package</h3>
         <p>A checklist of every required document, the forms filled in, and the experience and certification sections written from your information.</p>
       </article>
-      <article class="card">
+      <article class="card" id="svc-register">
         <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="#c2410c" stroke-width="2"/></svg></div>
         <h3>Registration and good standing</h3>
         <p>Vendor accounts on eMMA, eVA, OpenGov and Bonfire, your Maryland business standing in order, and help preparing certification applications.</p>
@@ -306,7 +309,7 @@ table.sample tr.own td{background:#fff1e8}
       <div class="trade">General maintenance<span>On-call contracts</span></div>
       <div class="trade">Accessibility<span>Document remediation</span></div>
     </div>
-    <div class="oos">
+    <div class="oos" id="out-of-state">
       <h3>Based outside the DMV?</h3>
       <p>If you are bidding Maryland, DC or Virginia work from another state, we get you set up to bid here: registering your company to do business in Maryland or Virginia, vendor accounts on eMMA, eVA and the county portals, and help preparing local certification applications. Then we watch DMV portals for bids that fit you.</p>
     </div>
@@ -356,27 +359,28 @@ table.sample tr.own td{background:#fff1e8}
     <div class="table-wrap">
       <table class="sample">
         <caption class="sr-only">Required submittals for solicitation K26-0050-25</caption>
-        <thead><tr><th scope="col">#</th><th scope="col">Submittal</th><th scope="col">Format</th><th scope="col">Who handles it</th></tr></thead>
+        <thead><tr><th scope="col">#</th><th scope="col">Submittal</th><th scope="col">Format</th><th scope="col">Status</th><th scope="col">Who handles it</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>Transmittal letter</td><td>Any</td><td>We draft, you sign</td></tr>
-          <tr><td>2</td><td>Executive summary</td><td>Any</td><td>You supply substance, we assemble</td></tr>
-          <tr><td>3</td><td>Attachment L, bidder profile</td><td><strong>PDF only</strong></td><td>We complete</td></tr>
-          <tr class="own"><td>4</td><td>Technical response</td><td>Any</td><td><strong>Yours</strong></td></tr>
-          <tr class="own"><td>5</td><td>Work plan</td><td>Any</td><td><strong>Yours</strong></td></tr>
-          <tr><td>6</td><td>Personnel experience and qualifications</td><td>Any</td><td>You supply, we format</td></tr>
-          <tr><td>7</td><td>Attachment M, bidder experience</td><td><strong>PDF only</strong></td><td>You supply projects, we write</td></tr>
-          <tr><td>8</td><td>Attachment B, bid affidavit</td><td><strong>PDF only</strong></td><td>We prepare, you sign</td></tr>
-          <tr><td>9</td><td>IRS Form W-9</td><td>Any</td><td>You</td></tr>
-          <tr><td>10</td><td>Attachment E, price form (Revision 1)</td><td><strong>Excel only</strong></td><td>We set it up, you price it</td></tr>
-          <tr><td>11</td><td>Intent to Bid</td><td>Portal</td><td>We track, you confirm</td></tr>
+          <tr><td>1</td><td>Transmittal letter</td><td>Any</td><td>Required</td><td>We draft, you sign</td></tr>
+          <tr><td>2</td><td>Claim of confidentiality</td><td>Any</td><td>Optional</td><td>You decide</td></tr>
+          <tr><td>3</td><td>Executive summary</td><td>Any</td><td>Required</td><td>You supply substance, we assemble</td></tr>
+          <tr><td>4</td><td>Attachment L, bidder profile</td><td><strong>PDF only</strong></td><td>Required</td><td>We complete</td></tr>
+          <tr class="own"><td>5</td><td>Technical response</td><td>Any</td><td>Required</td><td><strong>Yours</strong></td></tr>
+          <tr class="own"><td>6</td><td>Work plan</td><td>Any</td><td>Required</td><td><strong>Yours</strong></td></tr>
+          <tr><td>7</td><td>Personnel experience and qualifications</td><td>Any</td><td>Required</td><td>You supply, we format</td></tr>
+          <tr><td>8</td><td>Attachment M, bidder experience</td><td><strong>PDF only</strong></td><td>Required</td><td>You supply projects, we write</td></tr>
+          <tr><td>9</td><td>Subcontracting</td><td>Any</td><td>Optional</td><td>We advise</td></tr>
+          <tr><td>10</td><td>Attachment B, bid affidavit</td><td><strong>PDF only</strong></td><td>Required</td><td>We prepare, you sign</td></tr>
+          <tr><td>11</td><td>IRS Form W-9</td><td>Any</td><td>Required</td><td>You</td></tr>
         </tbody>
       </table>
     </div>
     <div class="flags">
       <h3>What the checklist flagged</h3>
       <ul class="ticks">
+        <li>Outside the 11 submittals, the price form was Excel only, and Addendum 1 replaced it with Revision 1.</li>
         <li>The Intent to Bid was marked mandatory and due at the same minute as the bid itself.</li>
-        <li>Addendum 1 replaced the price form three weeks before close. Pricing on the original form meant a superseded submission.</li>
+        <li>That replacement came three weeks before close. Pricing on the original form meant a superseded submission.</li>
         <li>Three attachments were PDF-only and the portal blocks the wrong file type.</li>
         <li>All three addenda had to be acknowledged or the proposal could be rejected.</li>
       </ul>
@@ -442,7 +446,7 @@ table.sample tr.own td{background:#fff1e8}
       </div>
       <div>
         <h3>Services</h3>
-        <ul><li>Bid search and alerts</li><li>Solicitation review</li><li>Bid package preparation</li><li>Portal registration</li><li>Business standing and certifications</li><li>Setup for out-of-state firms</li></ul>
+        <ul><li><a href="#svc-search">Bid search and alerts</a></li><li><a href="#svc-review">Solicitation review</a></li><li><a href="#svc-package">Bid package preparation</a></li><li><a href="#svc-register">Portal registration</a></li><li><a href="#svc-register">Business standing and certifications</a></li><li><a href="#out-of-state">Setup for out-of-state firms</a></li></ul>
       </div>
       <div>
         <h3>Contact</h3>
